@@ -1,0 +1,17 @@
+.actions-menu-wrapper {
+    display: block;
+}
+.actions-menu-wrapper ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.actions-menu-wrapper ul li{
+    display: inline;
+}
+.actions-menu-wrapper ul img{
+    margin: 50px;
+    height: 100px;
+    cursor: pointer;
+}

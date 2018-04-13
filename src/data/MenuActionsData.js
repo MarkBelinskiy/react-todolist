@@ -1,6 +1,5 @@
 import listIcon from '../images/menu-actions/list.svg';
 import noteIcon from '../images/menu-actions/summary.svg';
-console.log(listIcon);
 const menuData = [
   {
     id:0,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import NotesData from '../../data/NotesData';
-import Note from './Note';
+import NoteController from './NoteController';
 
 const styles = theme => ({
   root: {
@@ -22,7 +22,7 @@ class Notes extends Component {
           {(NotesData.length === 0) ?
             <p>Soryan, there is no notes, yet. Create your first note!</p> :
             NotesData.map ( noteItem =>
-              <Note key={noteItem.id} data={{...noteItem}}/>,
+              <NoteController key={noteItem.id} data={{...noteItem}}/>,
             )
           }
 

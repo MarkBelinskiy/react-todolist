@@ -42,7 +42,9 @@ class NoteController extends Component {
 			<Grid item className={ classes.grid } xs={ 12 } sm={ 6 }>
 				{ editMode ?
 					<EditNote
-
+						data={ data }
+						editMode={ editMode }
+						triggerEditMode={ () => this.triggerEditMode() }
 					/> :
 					<Note
 						data={ data }

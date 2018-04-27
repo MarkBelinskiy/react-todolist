@@ -25,7 +25,6 @@ class Notes extends Component {
               <NoteController key={noteItem.id} data={{...noteItem}}/>,
             )
           }
-
         </Grid>
       </div>
     );

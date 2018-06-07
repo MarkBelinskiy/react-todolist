@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import DeleteIcon from 'material-ui-icons/Delete';
-import EditIcon from 'material-ui-icons/Edit';
-import Zoom from 'material-ui/transitions/Zoom';
+import { compose } from 'redux';
 
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Zoom from '@material-ui/core/Zoom';
+import NoteControlButtons from './NoteControlButtons'
+
+
+
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import withMobileDialog from '@material-ui/core/withMobileDialog';
 
 const styles = theme => ({
 	paper: {
@@ -16,28 +25,17 @@ const styles = theme => ({
 		height: '90%',
 		color: theme.palette.text.secondary,
 	},
-	button: {
-		marginLeft: '10px',
-	},
-	controls: {
-		position: 'absolute',
-		bottom: '-20px',
-		right: '0',
-	},
 });
 
 class Note extends Component {
 
 	render() {
-		const classes = this.props.classes;
-		const note = this.props.data.note;
-		const title = this.props.data.title;
-		const noteControls = this.props.noteControls;
+		const { title, note } = this.props.data;
+		const { classes, triggerEditNote, removeNote, noteControls, showNoteControls, hideNoteControls, editMode, fullScreen } = this.props;
 		return (
-			<Zoom in={ !this.props.editMode }>
 				<Paper className={ classes.paper }
-					   onMouseOver={ this.props.showNoteControls }
-					   onMouseLeave={ this.props.hideNoteControls }>
+					   onMouseOver={ showNoteControls }
+					   onMouseLeave={ hideNoteControls }>
 					{ title &&
 					<Typography variant="headline" component="h3">
 						{ title }
@@ -48,33 +46,46 @@ class Note extends Component {
 						{ note }
 					</Typography>
 					}
-
-					<div className={ classes.controls }>
-						<Zoom in={ noteControls }>
-							<Button variant="fab"
-									mini
-									color="primary"
-									aria-label="edit"
-									className={ classes.button }
-									onClick={ this.props.triggerEditMode }>
-								<EditIcon/>
+					<NoteControlButtons
+						noteControls={ noteControls }
+						triggerEditNote={ triggerEditNote }
+						removeNote={ removeNote }
+					/>
+					<Dialog
+						fullScreen={ fullScreen }
+						open={ editMode }
+						onClose={ this.handleClose }
+						aria-labelledby="responsive-dialog-title"
+					>
+						<DialogTitle id="responsive-dialog-title">{ "Use Google's location service?" }</DialogTitle>
+						<DialogContent>
+							<DialogContentText>
+								Let Google help apps determine location. This means sending anonymous location data to
+								Google, even when no apps are running.
+							</DialogContentText>
+						</DialogContent>
+						<DialogActions>
+							<Button onClick={ this.handleClose } color="primary">
+								Disagree
 							</Button>
-						</Zoom>
-						<Zoom in={ noteControls }
-							  style={ { transitionDelay: noteControls ? 100 : 0 } }>
-							<Button variant="fab"
-									mini
-									color="secondary"
-									aria-label="add"
-									className={ classes.button }>
-								<DeleteIcon/>
+							<Button onClick={ this.handleClose } color="primary" autoFocus>
+								Agree
 							</Button>
-						</Zoom>
-					</div>
+						</DialogActions>
+					</Dialog>
 				</Paper>
-			</Zoom>
 		);
 	}
 }
 
-export default withStyles( styles )( Note );
+const combinedHOC = compose(
+	withStyles( styles ),
+
+
+	withMobileDialog(),
+
+);
+
+export default combinedHOC( Note )
+
+// export default withStyles( styles )( Note );

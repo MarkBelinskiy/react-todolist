@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import notes from './notes'
-import menuActions from './menuActions'
+import menu from './menu'
 
 export default combineReducers({
 	notes,
-	menuActions
+	menu
 })

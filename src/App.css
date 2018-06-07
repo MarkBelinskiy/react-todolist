@@ -1,29 +1,72 @@
 .App {
-  text-align: center;
+    text-align: center;
+    overflow: hidden;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 50px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
+.grid {
+    /*background: #EEE;*/
+    max-width: 1200px;
+    margin-bottom: 2em;
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- grid-item ---- */
+.grid-sizer,
+.grid-item {
+    width: 48%;
+}
+
+.gutter-sizer {
+    width: 4%;
+}
+
+.grid-item {
+    min-height: 20px;
+    float: left;
+    /*margin-bottom: 35px;*/
+    /*background: #D26;*/
+}
+
+.grid-item:hover {
+    border-color: hsla(0, 0%, 100%, 0.5);
+    /*cursor: move;*/
+}
+
+.grid-item.is-dragging,
+.grid-item.is-positioning-post-drag {
+    background: #EA0;
+    z-index: 2; /* keep dragged item on top */
+}
+
+.packery-drop-placeholder {
+    outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+    outline-offset: -6px;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
 }

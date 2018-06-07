@@ -1,6 +1,5 @@
 import listIcon from '../images/menu-actions/list.svg';
 import noteIcon from '../images/menu-actions/summary.svg';
-
 const initialState = [
 	{
 		id: 0,
@@ -13,11 +12,14 @@ const initialState = [
 		title: 'Create a Note',
 		iconURL: noteIcon,
 		itemAction: 'addNote'
-
 	},
 ]
 
 
-export default function menuActions( state = initialState ) {
-	return state
+export default function menu( state = initialState, action ) {
+	switch ( action.type ) {
+
+		default:
+			return state
+	}
 }

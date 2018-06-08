@@ -12,8 +12,7 @@ import Draggabilly from 'draggabilly';
 
 const styles = theme => ({
 	root: {
-		flexGrow: 1,
-		padding: "12px 12px 12px 18px",
+		padding: "30px 18px",
 	},
 });
 
@@ -28,8 +27,7 @@ class Notes extends Component {
 	} )
 
 	componentDidMount() {
-		// const parck = this.packery();
-		setTimeout( () => {this.packery()}, 0 );
+		const parck = this.packery();
 
 		// document.querySelector( '.grid-item' ).addEventListener("resize", console.log(123));
 
@@ -41,13 +39,12 @@ class Notes extends Component {
 
 	componentDidUpdate() {
 		// console.log(this.packery);
-		// const parck = this.packery();
-		setTimeout( () => {
-			const parck = this.packery();
-			console.log( parck.layout );
-			parck.layout()
-		}, 0 );
+		const parck = this.packery();
 		// parck.getItemElements().map( itemElem => parck.bindDraggabillyEvents( new Draggabilly( itemElem ) ) );
+
+
+		console.log( parck.layout );
+		parck.layout()
 
 
 		// this.packery().destroy

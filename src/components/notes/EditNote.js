@@ -59,11 +59,11 @@ class EditNote extends Component {
 							label="Your note"
 							fullWidth
 							multiline
-							rowsMax="4"
+							rowsMax="20"
 							defaultValue={ note }
-							InputProps={{
+							InputProps={ {
 								className: classes.textarea
-							}}
+							} }
 							margin="normal"
 							onChange={ ( e ) => this.handleInputChange( e ) }
 							name="note"

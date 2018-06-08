@@ -52,6 +52,7 @@ class NoteController extends Component {
 					hideNoteControls={ () => this.hideNoteControls() }
 					triggerEditNote={ () => this.triggerEditNote() }
 					removeNote={ () => removeNote( id ) }
+					updateNote={ updateNote }
 				/>
 				{ /*{ editMode ?
 				 <EditNote

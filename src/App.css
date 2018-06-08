@@ -1,8 +1,11 @@
 .App {
     text-align: center;
     overflow: hidden;
-}
+    min-width: 340px;
 
+}
+body {
+}
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 80px;
@@ -24,9 +27,16 @@
 }
 
 .grid {
-    /*background: #EEE;*/
-    max-width: 1200px;
-    margin-bottom: 2em;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto ;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* clearfix */
@@ -37,7 +47,6 @@
 }
 
 /* ---- grid-item ---- */
-.grid-sizer,
 .grid-item {
     width: 48%;
 }
@@ -49,7 +58,6 @@
 .grid-item {
     min-height: 20px;
     float: left;
-    /*margin-bottom: 35px;*/
     /*background: #D26;*/
 }
 
@@ -58,15 +66,36 @@
     /*cursor: move;*/
 }
 
+
+/* FOR DRAG & DROP
+
 .grid-item.is-dragging,
 .grid-item.is-positioning-post-drag {
     background: #EA0;
-    z-index: 2; /* keep dragged item on top */
+    z-index: 2;
 }
-
 .packery-drop-placeholder {
     outline: 3px dashed hsla(0, 0%, 0%, 0.5);
     outline-offset: -6px;
     -webkit-transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
+}*/
+@media screen and (min-width: 1280px) {
+    /* 1 columns for larger screens */
+    .grid-item {
+        width: 30%;
+    }
+
+    .gutter-sizer {
+        width: 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 1 columns for larger screens */
+    .grid-item {
+        width: 100%;
+        margin-bottom: 15px;
+
+    }
 }

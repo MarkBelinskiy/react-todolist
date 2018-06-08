@@ -1,4 +1,5 @@
 export default theme => ({
+
 	input: {
 		color: 'rgba(0, 0, 0, 0.87)',
 		fontSize: '1.5rem',
@@ -29,6 +30,7 @@ export default theme => ({
 	paper: {
 		position: 'relative',
 		padding: theme.spacing.unit * 2,
+		width:'700px',
 		textAlign: 'center',
 		height: '90%',
 		color: theme.palette.text.secondary,

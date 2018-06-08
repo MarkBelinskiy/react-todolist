@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withStyles } from '@material-ui/core/styles';
 import EditNote from '../components/notes/EditNote';
 import Note from '../components/notes/Note';
 import * as noteActions from '../actions/index'
 
 
-
-const styles = theme => ({
-	grid: {
-		marginTop: '2em',
-	}
-});
 
 class NoteController extends Component {
 
@@ -23,6 +15,7 @@ class NoteController extends Component {
 			editMode: false,
 		};
 	}
+
 
 	showNoteControls = () => {
 		this.setState( { noteControls: true } );
@@ -36,14 +29,12 @@ class NoteController extends Component {
 	};
 
 	render() {
-		const { classes, data, triggerEditNote, removeNote, updateNote } = this.props;
+		const {  data, removeNote, updateNote } = this.props;
 		const { id } = data;
 		const { editMode, noteControls } = this.state;
-		// console.log( this.props );
 
 		return (
 			<div className="grid-item">
-
 				<Note
 					data={ data }
 					editMode={ editMode }
@@ -89,10 +80,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const combinedHOC = compose(
-
-	withStyles( styles ),
-	connect( null, mapDispatchToProps ),
-);
-
-export default combinedHOC( NoteController )
+export default connect( null, mapDispatchToProps )( NoteController )

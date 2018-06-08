@@ -1,46 +1,24 @@
 import React, { Component } from 'react';
-import { compose } from 'redux';
-
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Zoom from '@material-ui/core/Zoom';
-import NoteControlButtons from './NoteControlButtons'
-
-
-import EditNote from '../../components/notes/EditNote';
-
-import Button from '@material-ui/core/Button';
+import Grow from '@material-ui/core/Grow';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import NoteControlButtons from './NoteControlButtons'
+import EditNote from '../../components/notes/EditNote';
+import './Note.scss'
 
-const styles = theme => ({
-	dialog:{
-	maxWidth:'inherit',
-		'&:focus': {
-			outline: 'none',
-		},
-	},
-	paper: {
-		position: 'relative',
-		padding: theme.spacing.unit * 2,
-		textAlign: 'center',
-		height: '90%',
-		color: theme.palette.text.secondary,
-	},
 
-});
-
+function DialogTransition(props) {
+	return <Grow direction="up" {...props} />;
+}
 class Note extends Component {
 
 	render() {
-		const { id, title, note } = this.props.data;
-		const { classes, triggerEditNote, removeNote, noteControls, showNoteControls, hideNoteControls, editMode, updateNote } = this.props;
+		const { id, title, note , newNote} = this.props.data;
+		const { triggerEditNote, removeNote, noteControls, showNoteControls, hideNoteControls, editMode, updateNote } = this.props;
 		return (
-			<Paper className={ classes.paper }
+			<Paper className="paper"
 				   onMouseOver={ showNoteControls }
 				   onMouseLeave={ hideNoteControls }>
 				{ title &&
@@ -58,19 +36,22 @@ class Note extends Component {
 					triggerEditNote={ triggerEditNote }
 					removeNote={ removeNote }
 				/>
+
 				<Dialog
-					PaperProps={ {className: classes.dialog} }
-					open={ editMode }
-					onClose={ this.handleClose }
+					PaperProps={ { className: 'dialog' } }
+					open={ newNote ? true : editMode }
+					TransitionComponent={DialogTransition}
+					keepMounted
+					onClose={ () => triggerEditNote( id ) }
 					aria-labelledby="form-dialog-title"
 				>
-					<DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-					<EditNote
-						data={ this.props.data }
-						editMode={ editMode }
-						triggerEditNote={ () => triggerEditNote( id ) }
-						removeNote={ () => removeNote( id ) }
-						updateNote={ updateNote }/>
+						<DialogTitle className="dialog-title" id="form-dialog-title">Edit Note</DialogTitle>
+						<EditNote
+							data={ this.props.data }
+							triggerEditNote={ () => triggerEditNote( id ) }
+							removeNote={ () => removeNote( id ) }
+							updateNote={ updateNote }/>
+
 				</Dialog>
 			</Paper>
 		);
@@ -78,4 +59,4 @@ class Note extends Component {
 }
 
 
-export default withStyles( styles )( Note );
+export default ( Note );

@@ -1,0 +1,14 @@
+.paper {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  height: 90%;
+}
+
+.dialog {
+  max-width: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}

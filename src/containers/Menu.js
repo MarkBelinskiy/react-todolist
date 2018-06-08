@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import uuidv4 from 'uuid/v4';
 import MenuItem from '../components/menu/MenuItem';
-import '../components/menu/Menu.css';
+import './Menu.scss';
 import * as noteActions from '../actions/index'
 
 class Menu extends Component {

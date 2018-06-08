@@ -32,7 +32,7 @@ export default function notes( state = initialState, action ) {
 				id: uuidv4(),
 				title: '',
 				note: '',
-				editMode: true,
+				newNote: true,
 			};
 			return [
 				newNote,

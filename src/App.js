@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuActions from './containers/Menu';
 import Notes from './containers/Notes';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 

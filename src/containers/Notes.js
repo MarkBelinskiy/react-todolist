@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { compose } from 'redux';
+import  './Notes.scss'
 import uuidv4 from 'uuid/v4';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import NoteController from './NoteController';
 import * as noteActions from '../actions/index'
 
 import Packery from 'packery';
 import Draggabilly from 'draggabilly';
 
-const styles = theme => ({
-	root: {
-		padding: "30px 18px",
-	},
-});
 
 class Notes extends Component {
 
@@ -55,7 +48,7 @@ class Notes extends Component {
 		const { classes, notes, removeNote } = this.props;
 
 		return (
-			<div className={ classes.root }>
+			<div className="notes-container">
 				<div className="grid">
 					<div className="grid-sizer"></div>
 					<div className="gutter-sizer"></div>
@@ -95,9 +88,5 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const combinedHOC = compose(
-	withStyles( styles ),
-	connect( mapStateToProps, mapDispatchToProps )
-);
 
-export default combinedHOC( Notes )
+export default connect( mapStateToProps, mapDispatchToProps )( Notes )

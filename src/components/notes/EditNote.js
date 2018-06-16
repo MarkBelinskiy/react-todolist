@@ -1,36 +1,50 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {Paper, Button, TextField} from '@material-ui/core';
-import {Done, Close} from '@material-ui/icons';
+import { Button, Paper, TextField } from '@material-ui/core';
+import { Close, Done } from '@material-ui/icons';
+import EditNoteDescriptionView from './EditNoteDescriptionView'
 import './EditNote.scss';
+
 
 class EditNote extends Component {
 	constructor( props ) {
 		super( props );
-		const { id, title, note, editMode } = this.props.data;
+		const { id, title, note } = this.props.data;
+
 		this.state = {
 			id,
 			title,
 			note,
-			editMode
 		};
+
+		this.baseState = this.state;
 	}
 
+
+	handleClearForm() {
+		const { popupCloseMethod } = this.props;
+		popupCloseMethod();
+		this.setState( this.baseState );
+	}
 
 	handleSubmit( e ) {
 		e.preventDefault();
-		this.props.updateNote( this.state );
+		const { submitMethod, popupCloseMethod } = this.props;
+		submitMethod( this.state );
+		popupCloseMethod();
+		this.setState( this.baseState );
 	}
 
-	handleInputChange( e ) {
+	handleSingleInputChange( e ) {
 		const { name, value } = e.target;
 		this.setState( { [ name ]: value } );
 	}
 
-	render() {
-		const { title, note } = this.props.data;
-		const { triggerEditNote } = this.props;
+	handleListChange( newListItems ) {
+		this.setState( { note: newListItems } );
+	}
 
+	render() {
+		const { title, note } = this.state;
 		return (
 			<Paper className="edit-paper">
 				<form className="edit-note"
@@ -41,21 +55,18 @@ class EditNote extends Component {
 					<TextField
 						fullWidth
 						label="Title"
-						defaultValue={ title }
-						onChange={ ( e ) => this.handleInputChange( e ) }
+						value={ title }
+						onChange={ ( e ) => this.handleSingleInputChange( e ) }
 						name="title"
 					/>
 
-					<TextField
-						label="Your note"
-						fullWidth
-						multiline
-						rowsMax="20"
-						defaultValue={ note }
-						margin="normal"
-						onChange={ ( e ) => this.handleInputChange( e ) }
-						name="note"
+
+					<EditNoteDescriptionView noteData={ note }
+											 handleSingleInputChange={ ( e ) => this.handleSingleInputChange( e ) }
+											 handleListChange={ ( e ) => this.handleListChange( e ) }
+
 					/>
+
 					<div className="controls">
 						<Button variant="fab"
 								mini
@@ -72,7 +83,8 @@ class EditNote extends Component {
 								color="secondary"
 								aria-label="cancel"
 								className="button"
-								onClick={ triggerEditNote }>
+								onClick={ () => this.handleClearForm() }
+						>
 							<Close/>
 						</Button>
 					</div>
@@ -81,5 +93,13 @@ class EditNote extends Component {
 		);
 	}
 }
+
+EditNote.defaultProps = {
+	data: {
+		id: '',
+		title: '',
+		note: '',
+	},
+};
 
 export default EditNote;

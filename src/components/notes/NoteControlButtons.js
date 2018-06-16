@@ -1,50 +1,48 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import styles from './NoteControlButtonsStyles'
-import Typography from '@material-ui/core/Typography';
+import './NoteControlButtons.scss'
 import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 import Zoom from '@material-ui/core/Zoom';
-import Done from '@material-ui/icons/Done';
-import Close from '@material-ui/icons/Close';
-import Popover from '@material-ui/core/Popover';
+import { Delete, Edit } from '@material-ui/icons';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
+function Transition( props ) {
+	return <Slide direction="up" { ...props } />;
+}
+
 
 class Note extends Component {
+
+	triggerDeleteConfirm = () => {
+		this.setState( { openDeleteConfirm: !this.state.openDeleteConfirm } );
+	};
 
 	constructor( props ) {
 		super( props );
 		this.state = {
-			anchorEl: null,
+			openDeleteConfirm: false,
 		};
 	}
 
-	openPopover = event => {
-		this.setState( {
-			anchorEl: event.currentTarget,
-		} );
-	};
-
-	closePopover = () => {
-		this.setState( {
-			anchorEl: null,
-		} );
-	};
-
 	render() {
-		const { openPopover, closePopover } = this;
-		const { triggerEditNote, removeNote, noteControls, classes } = this.props;
-		const { anchorEl } = this.state;
+		const { triggerDeleteConfirm } = this;
+		const { triggerEditNote, removeNote, noteControls } = this.props;
+		const { openDeleteConfirm } = this.state;
 		return (
-			<div className={ classes.controls }>
+			<div className="controls">
 				<Zoom in={ noteControls }>
 					<Button variant="fab"
 							mini
 							color="primary"
 							aria-label="edit"
-							className={ classes.button }
+							className="button"
 							onClick={ triggerEditNote }>
-						<EditIcon/>
+						<Edit/>
 					</Button>
 				</Zoom>
 				<Zoom in={ noteControls }
@@ -53,53 +51,41 @@ class Note extends Component {
 							mini
 							color="secondary"
 							aria-label="add"
-							className={ classes.button }
-							onClick={ openPopover }
+							className="button"
+							onClick={ triggerDeleteConfirm }
 					>
-						<DeleteIcon/>
+						<Delete/>
 					</Button>
 				</Zoom>
-				<Popover
-					open={ Boolean( anchorEl ) }
-					anchorEl={ anchorEl }
-					onClose={ closePopover }
-					anchorOrigin={ {
-						vertical: 'top',
-						horizontal: 'center',
-					} }
-					transformOrigin={ {
-						vertical: 'bottom',
-						horizontal: 'center',
-					} }
-				>
-					<Typography className={ classes.typography }>
-						Do you want to delete it? Are you sure?
-					</Typography>
 
-					<div className={ classes.removeNoteControls }>
-						<Button variant="fab"
-								mini
-								color="primary"
-								aria-label="save"
-								className={ classes.button }
-								classes={ { root: this.props.classes.raisedPrimary } }
-								onClick={ removeNote }
-						>
-							<Done/>
+				<Dialog
+					open={ openDeleteConfirm }
+					TransitionComponent={ Transition }
+					keepMounted
+					onClose={ triggerDeleteConfirm }
+					aria-labelledby="alert-dialog-slide-title"
+					aria-describedby="alert-dialog-slide-description"
+				>
+					<DialogTitle id="alert-dialog-slide-title">
+						{ "Remove Note?" }
+					</DialogTitle>
+					<DialogContent>
+						<DialogContentText id="alert-dialog-slide-description">
+							Do you want to delete it? Are you sure?
+						</DialogContentText>
+					</DialogContent>
+					<DialogActions>
+						<Button onClick={ removeNote } color="primary">
+							Yes, please
 						</Button>
-						<Button variant="fab"
-								mini
-								color="secondary"
-								aria-label="cancel"
-								className={ classes.button }
-								onClick={ closePopover }>
-							<Close/>
+						<Button onClick={ triggerDeleteConfirm } color="primary">
+							Nope, tnx
 						</Button>
-					</div>
-				</Popover>
+					</DialogActions>
+				</Dialog>
 			</div>
 		);
 	}
 }
 
-export default withStyles( styles )( Note );
+export default Note;

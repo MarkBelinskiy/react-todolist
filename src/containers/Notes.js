@@ -1,75 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import  './Notes.scss'
+import './Notes.scss'
 import uuidv4 from 'uuid/v4';
-import NoteController from './NoteController';
+import Note from '../components/notes/Note';
 import * as noteActions from '../actions/index'
-
 import Packery from 'packery';
-import Draggabilly from 'draggabilly';
 
 
 class Notes extends Component {
 
 	packery = () => new Packery( document.querySelector( '.grid' ), {
-		// options
 		itemSelector: '.grid-item',
 		columnWidth: '.grid-sizer',
 		gutter: '.gutter-sizer',
 		percentPosition: true,
-	} )
+	} );
 
 	componentDidMount() {
-		const parck = this.packery();
-
-		// document.querySelector( '.grid-item' ).addEventListener("resize", console.log(123));
-
-
-		// parck.getItemElements().map( itemElem => parck.bindDraggabillyEvents( new Draggabilly( itemElem ) ) );
-
-		console.log( 'didM' );
+		const packery = this.packery();
+		packery.layout();
 	}
 
 	componentDidUpdate() {
-		// console.log(this.packery);
-		const parck = this.packery();
-		// parck.getItemElements().map( itemElem => parck.bindDraggabillyEvents( new Draggabilly( itemElem ) ) );
-
-
-		console.log( parck.layout );
-		parck.layout()
-
-
-		// this.packery().destroy
-
+		const packery = this.packery();
+		packery.layout();
 	}
 
 	render() {
-		const { classes, notes, removeNote } = this.props;
+		const { notes, removeNote, updateNote } = this.props;
 
 		return (
 			<div className="notes-container">
 				<div className="grid">
-					<div className="grid-sizer"></div>
-					<div className="gutter-sizer"></div>
+					<div className="grid-sizer">.</div>
+					<div className="gutter-sizer">.</div>
 					{ (notes.length === 0) ?
 						<p>Soryan, there are no notes, yet. Create your first note!</p> :
 						notes.map( noteItem =>
-							<NoteController key={ uuidv4() } data={ { ...noteItem } } removeNote={ removeNote }/>
+							<Note key={ uuidv4() } data={ { ...noteItem } } removeNote={ removeNote }
+								  updateNote={ updateNote }/>
 						)
 					}
 				</div>
-
-
-				{ /*<Grid container
-				 spacing={ 24 }>
-				 { (notes.length === 0) ?
-				 <p>Soryan, there are no notes, yet. Create your first note!</p> :
-				 notes.map( noteItem =>
-				 <NoteController key={ uuidv4() } data={ { ...noteItem } } removeNote={ removeNote }/>
-				 )
-				 }
-				 </Grid>*/ }
 			</div>
 		);
 	}
@@ -77,16 +49,19 @@ class Notes extends Component {
 
 const mapStateToProps = state => {
 	return { notes: state.notes };
-}
+};
 
 const mapDispatchToProps = dispatch => {
 
 	return {
 		removeNote: ( id ) => {
 			dispatch( noteActions.removeNote( id ) )
-		}
+		},
+		updateNote: noteItem => {
+			dispatch( noteActions.updateNote( noteItem ) );
+		},
 	}
-}
+};
 
 
 export default connect( mapStateToProps, mapDispatchToProps )( Notes )

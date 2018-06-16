@@ -2,19 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '@material-ui/core/Tooltip';
 
-const MenuItem = ( { title, iconURL, itemAction, addNewNote } ) => {
-	const addNewList = () => console.log( 111 );
+const MenuItem = ( { title, iconURL, itemAction, openPopupNote, openPopupList } ) => {
 
 	const itemActionCompare = ( itemAction ) => {
 		switch ( itemAction ) {
 			case 'addNote' :
-				return addNewNote;
+				return openPopupNote;
 			case 'addList' :
-				return addNewList;
+				return openPopupList;
 			default:
 				return false
 		}
-	}
+	};
 	return (
 		<li>
 			<Tooltip title={ title }
@@ -25,14 +24,14 @@ const MenuItem = ( { title, iconURL, itemAction, addNewNote } ) => {
 			</Tooltip>
 		</li>
 	)
-}
+};
 
 
 MenuItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	iconURL: PropTypes.string.isRequired,
 	itemAction: PropTypes.string.isRequired,
-	addNewNote: PropTypes.func.isRequired
+	// addNewNote: PropTypes.func.isRequired
 };
 
 export default MenuItem;

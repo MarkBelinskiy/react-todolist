@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
-import './NoteControlButtons.scss'
-import Button from '@material-ui/core/Button';
-import Zoom from '@material-ui/core/Zoom';
+import PropTypes from 'prop-types';
 import { Delete, Edit } from '@material-ui/icons';
-
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import {
+	Button,
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogContentText,
+	DialogTitle,
+	Slide,
+	Zoom
+} from '@material-ui/core';
+import './NoteControlButtons.scss'
 
 function Transition( props ) {
 	return <Slide direction="up" { ...props } />;
 }
 
-
-class Note extends Component {
+export default class NoteControlButtons extends Component {
+	static propTypes = {
+		noteControls: PropTypes.bool.isRequired,
+		triggerEditNote: PropTypes.func.isRequired,
+		removeNote: PropTypes.func.isRequired,
+	}
+	static defaultProps = {
+		noteControls: false,
+		triggerEditNote: () => {},
+		removeNote: () => {}
+	};
+	state = {
+		openDeleteConfirm: false,
+	};
 
 	triggerDeleteConfirm = () => {
 		this.setState( { openDeleteConfirm: !this.state.openDeleteConfirm } );
 	};
-
-	constructor( props ) {
-		super( props );
-		this.state = {
-			openDeleteConfirm: false,
-		};
-	}
 
 	render() {
 		const { triggerDeleteConfirm } = this;
@@ -87,5 +94,3 @@ class Note extends Component {
 		);
 	}
 }
-
-export default Note;

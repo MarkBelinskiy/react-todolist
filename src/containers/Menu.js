@@ -2,29 +2,37 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import uuidv4 from 'uuid/v4';
-import MenuItem from '../components/menu/MenuItem';
-import './Menu.scss';
 import * as noteActions from '../actions/index'
-
-import MenuDialog from '../components/menu/MenuDialog';
-
+import MenuItem from '../components/menu/MenuItem';
+import FormDialog from '../components/globals/FormDialog';
+import './Menu.scss';
 
 class Menu extends Component {
+	static propTypes = {
+		menu: PropTypes.arrayOf( PropTypes.shape( {
+			id: PropTypes.number.isRequired,
+			title: PropTypes.string.isRequired,
+			iconURL: PropTypes.string.isRequired,
+			itemAction: PropTypes.string.isRequired,
+		} ).isRequired ).isRequired,
+		addNewNote: PropTypes.func.isRequired,
+	};
+	static defaultProps = {
+		menu: [],
+		addNewNote: () => {},
+	};
+	state = {
+		openNote: false,
+		openList: false,
+	};
 
 	triggerPopupNote = () => {
 		this.setState( { openNote: !this.state.openNote } );
 	};
+
 	triggerPopupList = () => {
 		this.setState( { openList: !this.state.openList } );
 	};
-
-	constructor( props ) {
-		super( props );
-		this.state = {
-			openNote: false,
-			openList: false,
-		};
-	}
 
 	render() {
 		const { menu, addNewNote } = this.props;
@@ -42,14 +50,14 @@ class Menu extends Component {
 								/>,
 							) }
 						</ul>
-						<MenuDialog open={ openNote }
+						<FormDialog open={ openNote }
 									refTitle='Note'
 									title="Add Note"
 									noteType={ '' }
 									submitMethod={ ( noteItem ) => {addNewNote( noteItem )} }
 									popupCloseMethod={ this.triggerPopupNote }
 						/>
-						<MenuDialog open={ openList }
+						<FormDialog open={ openList }
 									refTitle='List'
 									title="Add List"
 									noteType={ [] }
@@ -63,32 +71,15 @@ class Menu extends Component {
 	}
 }
 
-Menu.propTypes = {
-	menu: PropTypes.arrayOf( PropTypes.shape( {
-		id: PropTypes.number.isRequired,
-		title: PropTypes.string.isRequired,
-		iconURL: PropTypes.string.isRequired,
-		itemAction: PropTypes.string.isRequired,
-	} ).isRequired ).isRequired,
-	addNewNote: PropTypes.func.isRequired,
-};
-Menu.defaultProps = {
-	menu: [],
-};
-
 const mapStateToProps = state => {
 	return { menu: state.menu };
 };
 
 const mapDispatchToProps = dispatch => {
-
-
-	function addNewNote( noteItem ) {
-		dispatch( noteActions.addNote( noteItem ) );
-	}
-
 	return {
-		addNewNote
+		addNewNote( noteItem ) {
+			dispatch( noteActions.addNote( noteItem ) );
+		}
 	}
 };
 

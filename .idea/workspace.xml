@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d5c343b-8059-4645-91e5-b91d9f240292" name="Default" comment="update : add list with drag &amp; drop and checkbox (done or not), uses the same reducer as for note">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/menu/MenuDialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/notes/EditNoteSortableList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/notes/NoteDescriptionView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/notes/NoteDescriptionView.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/constants/List.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/NoteController.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/NoteControlButtonsStyles.js" afterPath="$PROJECT_DIR$/src/components/notes/NoteControlButtons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/markbelinskiy.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/markbelinskiy.xml" />
+    <list default="true" id="1d5c343b-8059-4645-91e5-b91d9f240292" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/menu/MenuDialog.js" afterPath="$PROJECT_DIR$/src/components/globals/FormDialog.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/EditNote.js" afterPath="$PROJECT_DIR$/src/components/notes/editNote/EditNote.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/EditNote.scss" afterPath="$PROJECT_DIR$/src/components/notes/editNote/EditNote.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.js" afterPath="$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.scss" afterPath="$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/EditNoteSortableList.js" afterPath="$PROJECT_DIR$/src/components/notes/editNote/EditNoteSortableList.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/Note.js" afterPath="$PROJECT_DIR$/src/components/notes/note/Note.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/Note.scss" afterPath="$PROJECT_DIR$/src/components/notes/note/Note.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/NoteControlButtons.js" afterPath="$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/NoteControlButtons.scss" afterPath="$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/NoteDescriptionView.js" afterPath="$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/notes/NoteDescriptionView.scss" afterPath="$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/menu/MenuItem.js" afterPath="$PROJECT_DIR$/src/components/menu/MenuItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/notes/EditNote.js" afterPath="$PROJECT_DIR$/src/components/notes/EditNote.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/notes/EditNote.scss" afterPath="$PROJECT_DIR$/src/components/notes/EditNote.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/notes/Note.js" afterPath="$PROJECT_DIR$/src/components/notes/Note.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/notes/Note.scss" afterPath="$PROJECT_DIR$/src/components/notes/Note.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/notes/NoteControlButtons.js" afterPath="$PROJECT_DIR$/src/components/notes/NoteControlButtons.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/Note.js" afterPath="$PROJECT_DIR$/src/constants/Note.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Menu.js" afterPath="$PROJECT_DIR$/src/containers/Menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Menu.scss" afterPath="$PROJECT_DIR$/src/containers/Menu.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Notes.js" afterPath="$PROJECT_DIR$/src/containers/Notes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Notes.scss" afterPath="$PROJECT_DIR$/src/containers/Notes.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/menu.js" afterPath="$PROJECT_DIR$/src/reducers/menu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/notes.js" afterPath="$PROJECT_DIR$/src/reducers/notes.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,37 +41,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="155">
-      <file leaf-file-name="NoteDescriptionView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/notes/NoteDescriptionView.js">
+      <file leaf-file-name="NoteDescriptionView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditNote.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/notes/EditNote.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/menu/MenuItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            <state relative-caret-position="1104">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Note.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/Note.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +78,8 @@
       <file leaf-file-name="Notes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Notes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+            <state relative-caret-position="42">
+              <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -94,69 +87,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Menu.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="81" column="2" lean-forward="false" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notes.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/notes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="54" column="14" lean-forward="true" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuDialog.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/menu/MenuDialog.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="-494">
+              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoteDescriptionView.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="EditNoteDescriptionView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.js">
+        <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="23">
+              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditNoteSortableList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteSortableList.js">
+      <file leaf-file-name="NoteControlButtons.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="713">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,10 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MenuActionsData</find>
-      <find>react-grid-layout</find>
-      <find>react-mason</find>
-      <find>draggabilly</find>
       <find>masonry-layout</find>
       <find>sizeme</find>
       <find>1</find>
@@ -203,6 +188,10 @@
       <find>textarea</find>
       <find>refTitle</find>
       <find>this.props</find>
+      <find>data: PropTypes</find>
+      <find>shape</find>
+      <find>oneo</find>
+      <find>NoteControlButtons</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,22 +200,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/data/MenuActionsData.js" />
-        <option value="$PROJECT_DIR$/src/components/notes/Note.css" />
-        <option value="$PROJECT_DIR$/src/components/notes/NoteContoller.js" />
-        <option value="$PROJECT_DIR$/src/data/NotesData.js" />
-        <option value="$PROJECT_DIR$/src/components/menu-actions/MenuActionsItem.js" />
-        <option value="$PROJECT_DIR$/src/reducers/note.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/menu-actions/MenuActions.js" />
         <option value="$PROJECT_DIR$/src/reducers/menuActions.js" />
         <option value="$PROJECT_DIR$/src/containers/MenuActions.js" />
-        <option value="$PROJECT_DIR$/src/reducers/menu.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/notes/Notes.js" />
         <option value="$PROJECT_DIR$/src/components/notes/NoteController.js" />
         <option value="$PROJECT_DIR$/src/components/notes/EditNote.css" />
-        <option value="$PROJECT_DIR$/src/constants/Note.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
@@ -253,15 +232,25 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/notes/Note.js" />
         <option value="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.scss" />
-        <option value="$PROJECT_DIR$/src/components/notes/EditNote.js" />
         <option value="$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.js" />
         <option value="$PROJECT_DIR$/src/components/notes/EditNoteSortableList.js" />
         <option value="$PROJECT_DIR$/src/components/menu/MenuDialog.js" />
         <option value="$PROJECT_DIR$/src/components/notes/NoteDescriptionView.js" />
-        <option value="$PROJECT_DIR$/src/components/menu/MenuItem.js" />
-        <option value="$PROJECT_DIR$/src/containers/Notes.js" />
-        <option value="$PROJECT_DIR$/src/containers/Menu.js" />
         <option value="$PROJECT_DIR$/src/reducers/notes.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/EditNote.js" />
+        <option value="$PROJECT_DIR$/src/constants/Note.js" />
+        <option value="$PROJECT_DIR$/src/reducers/menu.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/menu/MenuItem.js" />
+        <option value="$PROJECT_DIR$/src/components/globals/FormDialog.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/editNote/EditNote.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/editNote/EditNoteSortableList.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/note/Note.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.js" />
+        <option value="$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.js" />
+        <option value="$PROJECT_DIR$/src/containers/Menu.js" />
+        <option value="$PROJECT_DIR$/src/containers/Notes.js" />
       </list>
     </option>
   </component>
@@ -337,13 +326,14 @@
               <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-todolist" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-todolist" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="globals" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
@@ -358,6 +348,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="notes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="notes" type="462c0819:PsiDirectoryNode" />
+              <item name="editNote" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="notes" type="462c0819:PsiDirectoryNode" />
+              <item name="note" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-todolist" type="b2602c69:ProjectViewProjectNode" />
@@ -394,10 +406,11 @@
       <recent name="$PROJECT_DIR$/src/actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/notes/note" />
+      <recent name="$PROJECT_DIR$/src/components/notes/editNote" />
+      <recent name="$PROJECT_DIR$/src/components/globals" />
       <recent name="$PROJECT_DIR$/src/components/notes" />
       <recent name="$PROJECT_DIR$/src/containers" />
-      <recent name="$PROJECT_DIR$/src/components/menu-actions" />
-      <recent name="$PROJECT_DIR$/src/images/menu-actions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -501,7 +514,7 @@
       <workItem from="1528483715950" duration="542000" />
       <workItem from="1528655847099" duration="47847000" />
       <workItem from="1528956181845" duration="24851000" />
-      <workItem from="1529066635878" duration="5281000" />
+      <workItem from="1529066635878" duration="12343000" />
     </task>
     <task id="LOCAL-00001" summary="redux structure">
       <created>1524804906544</created>
@@ -524,21 +537,38 @@
       <option name="project" value="LOCAL" />
       <updated>1528473437050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update : add list with drag &amp; drop and checkbox (done or not), uses the same reducer as for note">
+      <created>1529140264331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529140264331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239951000" />
+    <option name="totallyTimeSpent" value="247013000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2212176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4978903" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4978903" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5021097" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4978903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -551,7 +581,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -568,15 +597,17 @@
     <MESSAGE value="Connect Sass, change styles for Sass and remove JS Styles from 'WithStyles' Component" />
     <MESSAGE value="update : add list with drag &amp; drop and checkbox (done or not), uses the same reducer as for note" />
     <option name="LAST_COMMIT_MESSAGE" value="update : add list with drag &amp; drop and checkbox (done or not), uses the same reducer as for note" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/Icon/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/material-ui/Icon/Icon.d.ts" />
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNote.scss" />
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNote.scss" />
     <entry file="file://$PROJECT_DIR$/src/data/MenuActionsData.js" />
     <entry file="file://$PROJECT_DIR$/src/data/NotesData.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/uuid/v1.js">
@@ -604,13 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/Note.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -656,20 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -678,14 +688,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteStyles.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Notes.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -702,7 +704,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/NoteControlButtons.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
@@ -711,17 +713,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/notes/NoteControlButtonsStyles.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/notes/Note.js">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/Note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="40" column="53" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/Note.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/Note.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
@@ -729,46 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/NoteControlButtons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/List.js" />
     <entry file="file://$PROJECT_DIR$/src/actions/Note.js" />
     <entry file="file://$PROJECT_DIR$/src/reducers/lists.js" />
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/NoteDescriptionView.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNote.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNote.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1058">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
@@ -777,14 +741,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/TestSortable.js" />
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4623">
@@ -793,17 +749,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/Note.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1909">
           <caret line="83" column="23" lean-forward="false" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
@@ -818,46 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteSortableList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNoteDescriptionView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/EditNote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/menu/MenuDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -866,51 +772,186 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/notes/NoteDescriptionView.js">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1529322701866" expanded="true" signature="53059:53076" ph="..." />
+            <marker date="1529322701866" expanded="true" signature="53059:53094" ph="..." />
+            <marker date="1529322701866" expanded="true" signature="53059:53107" ph="..." />
+            <marker date="1529322701866" expanded="true" signature="53059:53122" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/menu/MenuItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state relative-caret-position="528">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Notes.js">
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNoteSortableList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        <state relative-caret-position="860">
+          <caret line="52" column="64" lean-forward="false" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/globals/FormDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="43" column="19" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNote.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/Note.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteControlButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/editNote/EditNoteDescriptionView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/Note.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="81" column="2" lean-forward="false" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+        <state relative-caret-position="598">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/notes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        <state relative-caret-position="-494">
+          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notes/note/NoteDescriptionView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Paper, TextField } from '@material-ui/core';
 import { Close, Done } from '@material-ui/icons';
 import EditNoteDescriptionView from './EditNoteDescriptionView'
 import './EditNote.scss';
 
-
-class EditNote extends Component {
+export default class EditNote extends Component {
 	constructor( props ) {
 		super( props );
 		const { id, title, note } = this.props.data;
-
 		this.state = {
 			id,
 			title,
 			note,
 		};
-
 		this.baseState = this.state;
 	}
+
+	static propTypes = {
+		data: PropTypes.object.isRequired,
+		popupCloseMethod: PropTypes.func.isRequired,
+		submitMethod: PropTypes.func.isRequired,
+	}
+
+	static defaultProps = {
+		data: {
+			id: '',
+			title: '',
+			note: '',
+		},
+	};
 
 
 	handleClearForm() {
@@ -60,7 +72,6 @@ class EditNote extends Component {
 						name="title"
 					/>
 
-
 					<EditNoteDescriptionView noteData={ note }
 											 handleSingleInputChange={ ( e ) => this.handleSingleInputChange( e ) }
 											 handleListChange={ ( e ) => this.handleListChange( e ) }
@@ -93,13 +104,3 @@ class EditNote extends Component {
 		);
 	}
 }
-
-EditNote.defaultProps = {
-	data: {
-		id: '',
-		title: '',
-		note: '',
-	},
-};
-
-export default EditNote;

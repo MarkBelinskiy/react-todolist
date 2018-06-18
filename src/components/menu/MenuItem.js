@@ -28,10 +28,19 @@ const MenuItem = ( { title, iconURL, itemAction, openPopupNote, openPopupList } 
 
 
 MenuItem.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	iconURL: PropTypes.string.isRequired,
 	itemAction: PropTypes.string.isRequired,
-	// addNewNote: PropTypes.func.isRequired
+	openPopupNote: PropTypes.func.isRequired,
+	openPopupList: PropTypes.func.isRequired
+};
+
+MenuItem.defaultProps = {
+	title: 'Default title',
+	iconURL: '',
+	itemAction: 'addNote',
+	openPopupNote: () => {},
+	openPopupList: () => {}
 };
 
 export default MenuItem;

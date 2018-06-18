@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Notes.scss'
 import uuidv4 from 'uuid/v4';
-import Note from '../components/notes/Note';
+import Note from '../components/notes/note/Note';
 import * as noteActions from '../actions/index'
 import Packery from 'packery';
 
 
 class Notes extends Component {
+	static propTypes = {
+		notes: PropTypes.array.isRequired,
+		removeNote: PropTypes.func.isRequired,
+		updateNote: PropTypes.func.isRequired
+	};
+	static defaultProps = {
+		notes: [],
+		removeNote: () => {},
+		updateNote: () => {},
+	};
 
 	packery = () => new Packery( document.querySelector( '.grid' ), {
 		itemSelector: '.grid-item',
@@ -32,8 +43,10 @@ class Notes extends Component {
 		return (
 			<div className="notes-container">
 				<div className="grid">
-					<div className="grid-sizer">.</div>
-					<div className="gutter-sizer">.</div>
+					<div className="grid-sizer">
+					</div>
+					<div className="gutter-sizer">
+					</div>
 					{ (notes.length === 0) ?
 						<p>Soryan, there are no notes, yet. Create your first note!</p> :
 						notes.map( noteItem =>
@@ -52,7 +65,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-
 	return {
 		removeNote: ( id ) => {
 			dispatch( noteActions.removeNote( id ) )

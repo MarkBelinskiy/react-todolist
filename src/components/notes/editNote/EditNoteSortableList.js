@@ -1,8 +1,6 @@
 import React from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Checkbox from '@material-ui/core/Checkbox';
-import { TextField } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { Checkbox, List, ListItem, TextField } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import DragHandleIcon from '@material-ui/icons/DragHandle';
 import { SortableContainer, SortableElement, SortableHandle, } from 'react-sortable-hoc';
@@ -37,6 +35,13 @@ const SortableItem = SortableElement( ( { index, value, handleCheckChangeListIte
 	);
 } );
 
+SortableItem.propTypes = {
+	index: PropTypes.number.isRequired,
+	value: PropTypes.object,
+	handleCheckChangeListItem: PropTypes.func.isRequired,
+	handleListItemNameChange: PropTypes.func.isRequired,
+	handleRemoveListItem: PropTypes.func.isRequired,
+};
 
 const EditNoteSortableList = SortableContainer( ( { items, handleCheckChangeListItem, handleListItemNameChange, handleRemoveListItem } ) => {
 	return (
@@ -51,5 +56,12 @@ const EditNoteSortableList = SortableContainer( ( { items, handleCheckChangeList
 		</List>
 	);
 } );
+
+EditNoteSortableList.propTypes = {
+	items: PropTypes.array.isRequired,
+	handleCheckChangeListItem: PropTypes.func.isRequired,
+	handleListItemNameChange: PropTypes.func.isRequired,
+	handleRemoveListItem: PropTypes.func.isRequired,
+};
 
 export default EditNoteSortableList;

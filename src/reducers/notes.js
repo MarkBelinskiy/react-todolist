@@ -75,22 +75,6 @@ export default function notes( state = initialState, action ) {
 			return [
 				...updatedNote
 			];
-// TODO: remove to local storage
-		/*case TRIGGER_EDIT_NOTE:
-		 const filteredNote = state.filter( elem => {
-		 if ( elem.id === action.id ) {
-		 return (( elem.title !== '') || elem.note !== '')
-		 }
-		 return elem
-		 } );
-		 const changedEditMode = filteredNote.map( elem => {
-		 elem.id === action.id && ( elem.editMode = !elem.editMode );
-		 return elem;
-		 } );
-
-		 return [
-		 ...changedEditMode
-		 ];*/
 		default:
 			return state
 	}

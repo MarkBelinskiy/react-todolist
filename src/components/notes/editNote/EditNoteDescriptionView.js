@@ -1,13 +1,25 @@
-import React, { Component } from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import { TextField } from '@material-ui/core';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { ListItem, TextField } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import { arrayMove } from 'react-sortable-hoc';
 import EditNoteSortableList from './EditNoteSortableList'
 import './EditNoteDescriptionView.scss'
-import { arrayMove } from 'react-sortable-hoc';
 
+export default class EditNoteDescriptionView extends PureComponent {
+	static propTypes = {
+		noteData: PropTypes.oneOfType( [
+			PropTypes.string,
+			PropTypes.array,
+		] ).isRequired,
+		handleListChange: PropTypes.func.isRequired
+	}
 
-class EditNoteDescriptionView extends Component {
+	static defaultProps = {
+		noteData: '',
+		handleListChange: () => {}
+	};
+
 	onSortStart = () => {
 		document.body.className = 'dragging-list';
 	};
@@ -19,7 +31,6 @@ class EditNoteDescriptionView extends Component {
 		handleListChange( arrayMove( noteData, oldIndex, newIndex ) );
 	};
 
-
 	handleListItemNameChange = ( currentId ) => ( e ) => {
 		const { noteData, handleListChange } = this.props;
 
@@ -28,7 +39,6 @@ class EditNoteDescriptionView extends Component {
 		);
 		handleListChange( newListItems );
 	};
-
 
 	handleAddListItem = () => {
 		const { noteData, handleListChange } = this.props;
@@ -88,5 +98,3 @@ class EditNoteDescriptionView extends Component {
 		);
 	}
 }
-
-export default EditNoteDescriptionView;

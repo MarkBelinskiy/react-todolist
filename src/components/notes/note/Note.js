@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
-
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Grow from '@material-ui/core/Grow';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import PropTypes from 'prop-types';
+import { Dialog, DialogTitle, Grow, Paper, Typography } from '@material-ui/core';
 import NoteControlButtons from './NoteControlButtons'
 import NoteDescriptionView from './NoteDescriptionView'
-import EditNote from './EditNote';
+import EditNote from '../editNote/EditNote';
 import './Note.scss'
 
 
 function DialogTransition( props ) {
 	return <Grow direction="up" { ...props } />;
 }
-class Note extends Component {
+
+export default class Note extends Component {
+	static propTypes = {
+		data: PropTypes.shape( {
+			id: PropTypes.string.isRequired,
+			title: PropTypes.string.isRequired,
+			note: PropTypes.oneOfType( [
+				PropTypes.string,
+				PropTypes.array,
+			] ).isRequired,
+		} ).isRequired,
+	}
+	static defaultProps = {
+		data: {
+			id: '',
+			title: '',
+			note: '',
+		},
+	};
+	state = {
+		noteControls: false,
+		editMode: false,
+	};
 
 	showNoteControls = () => {
 		this.setState( { noteControls: true } );
@@ -26,17 +44,8 @@ class Note extends Component {
 		this.setState( { editMode: !this.state.editMode } );
 	};
 
-	constructor( props ) {
-		super( props );
-		this.state = {
-			noteControls: false,
-			editMode: false,
-		};
-	}
-
 	render() {
 		const { data, removeNote, updateNote } = this.props;
-
 		const { id, title, note } = data;
 		const { editMode, noteControls } = this.state;
 
@@ -83,5 +92,3 @@ class Note extends Component {
 		);
 	}
 }
-
-export default Note

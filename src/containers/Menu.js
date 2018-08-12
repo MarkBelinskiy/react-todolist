@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import uuidv4 from 'uuid/v4';
 import * as noteActions from '../actions/index'
 import MenuItem from '../components/menu/MenuItem';
-import FormDialog from '../components/globals/FormDialog';
+import EditNoteFormDialog from '../components/globals/EditNoteFormDialog';
 import './Menu.scss';
 
 class Menu extends Component {
@@ -50,19 +50,19 @@ class Menu extends Component {
 								/>,
 							) }
 						</ul>
-						<FormDialog open={ openNote }
-									refTitle='Note'
-									title="Add Note"
-									noteType={ '' }
-									submitMethod={ ( noteItem ) => {addNewNote( noteItem )} }
-									popupCloseMethod={ this.triggerPopupNote }
+						<EditNoteFormDialog open={ openNote }
+											refTitle='Note'
+											title="Add Note"
+											noteType={ '' }
+											submitMethod={ ( noteItem ) => {addNewNote( noteItem )} }
+											popupCloseMethod={ this.triggerPopupNote }
 						/>
-						<FormDialog open={ openList }
-									refTitle='List'
-									title="Add List"
-									noteType={ [] }
-									submitMethod={ ( noteItem ) => {addNewNote( noteItem )} }
-									popupCloseMethod={ this.triggerPopupList }
+						<EditNoteFormDialog open={ openList }
+											refTitle='List'
+											title="Add List"
+											noteType={ [] }
+											submitMethod={ ( noteItem ) => {addNewNote( noteItem )} }
+											popupCloseMethod={ this.triggerPopupList }
 						/>
 					</div>
 				}
